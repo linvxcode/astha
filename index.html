@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="assets/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>ASTHA TOUR</title>
+  </head>
+  <body>
+    <header
+      class="sm-Shadow bg-white"
+      style="width: 100%; position: fixed; top: 0; z-index: 99999"
+    >
+      <nav
+        class="navigation"
+        style="max-width: 980px; margin-left: auto; margin-right: auto"
+      >
+        <div class="w-100">
+          <img
+            src="/assets/logo.png"
+            alt="Logo"
+            style="width: 130px; height: 39px"
+          />
+        </div>
+
+        <div class="navigate-link" style="gap: 55px; font-weight: 900">
+          <p>Profile</p>
+          <p>Armada</p>
+          <p>Portofolio</p>
+          <p>Wisata</p>
+        </div>
+
+        <div class="w-100 btn-header">
+          <button
+            type="button"
+            style="
+              --bs-btn-font-size: 18px;
+              --bs-btn-color: white;
+              --bs-btn-line-height: 1.2;
+              font-weight: 800;
+              --bs-btn-padding-y: 12px;
+            "
+            class="btn btn-lg linear rounded-5 px-4"
+          >
+            Booking Now!
+          </button>
+        </div>
+
+        <label class="burger" for="burger" id="open" onclick="hiddenNav()">
+          <input type="checkbox" id="burger" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <div id="navigation-mobile">
+          <div
+            class="w-100 d-flex flex-column gap-2 justify-content-center align-items-center"
+          >
+            <p style="font-weight: 800">Profile</p>
+            <p style="font-weight: 800">Armada</p>
+            <p style="font-weight: 800">Portofolio</p>
+            <p style="font-weight: 800">Wisata</p>
+            <button
+              type="button"
+              style="
+                --bs-btn-font-size: 18px;
+                --bs-btn-color: white;
+                --bs-btn-line-height: 1.2;
+                font-weight: 800;
+                --bs-btn-padding-y: 12px;
+              "
+              class="btn btn-lg linear rounded-5 px-4"
+            >
+              Booking Now!
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- WA FIXED -->
+    <div class="wa-chat">
+      <svg
+        width="57"
+        height="57"
+        viewBox="0 0 57 57"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="28.5" cy="28.5" r="28.5" fill="#2FCC3E" />
+        <path
+          d="M17.1026 39.5563C16.8862 39.5563 16.6806 39.4698 16.5292 39.3183C16.3236 39.1128 16.2371 38.8099 16.3129 38.5286L17.676 33.433C16.7672 31.7454 16.2912 29.8413 16.2912 27.9156C16.2912 21.5002 21.5057 16.2856 27.9211 16.2856C34.3365 16.2856 39.5511 21.5002 39.5511 27.9156C39.5511 34.331 34.3365 39.5455 27.9211 39.5455C25.963 39.5455 24.0481 39.0587 22.3388 38.1283L17.319 39.5239C17.2432 39.5455 17.1783 39.5563 17.1026 39.5563ZM22.447 36.4514C22.5876 36.4514 22.7282 36.4947 22.8581 36.5596C24.3835 37.4576 26.1361 37.9336 27.9211 37.9336C33.4386 37.9336 37.9283 33.4439 37.9283 27.9264C37.9283 22.409 33.4386 17.9193 27.9211 17.9193C22.4037 17.9193 17.914 22.409 17.914 27.9264C17.914 29.6898 18.3792 31.41 19.2555 32.9246C19.3637 33.1085 19.3961 33.3357 19.342 33.5412L18.2602 37.5874L22.2414 36.4839C22.3063 36.4622 22.382 36.4514 22.447 36.4514Z"
+          fill="white"
+        />
+        <path
+          d="M30.8866 34.1575C30.2159 34.1575 29.5235 34.006 28.7987 33.6923C28.1171 33.4002 27.4355 33.0107 26.7756 32.5239C26.1265 32.0479 25.4882 31.5069 24.904 30.9227C24.3198 30.3277 23.7788 29.7003 23.3028 29.0512C22.816 28.3696 22.4265 27.6988 22.1452 27.0389C21.8423 26.3249 21.6909 25.6217 21.6909 24.9509C21.6909 24.4749 21.7774 24.0205 21.9397 23.5986C22.1128 23.155 22.3941 22.7547 22.7619 22.4086C23.4543 21.727 24.4496 21.4782 25.2394 21.8568C25.5098 21.9758 25.737 22.1706 25.9101 22.4302L27.165 24.1936C27.2949 24.3667 27.3923 24.5506 27.468 24.7345C27.5545 24.9509 27.6086 25.1673 27.6086 25.3729C27.6086 25.6541 27.5329 25.9354 27.3814 26.1842C27.2841 26.3465 27.1434 26.5413 26.9595 26.7252L26.8188 26.8766C26.8837 26.9632 26.9595 27.0713 27.0785 27.2012C27.3057 27.4608 27.5545 27.7421 27.825 28.0126C28.0954 28.2722 28.3659 28.5318 28.6363 28.759C28.7662 28.8672 28.8744 28.9538 28.961 29.0079L29.1124 28.8564C29.3071 28.6617 29.5019 28.5102 29.6966 28.4129C30.0536 28.1857 30.6053 28.1316 31.0922 28.3371C31.2653 28.402 31.4384 28.4994 31.6223 28.6292L33.429 29.9058C33.6778 30.0789 33.8725 30.3169 34.0024 30.5874C34.1106 30.8578 34.1538 31.0959 34.1538 31.3447C34.1538 31.6692 34.0781 31.983 33.9375 32.2859C33.7968 32.5672 33.6345 32.816 33.4398 33.0432C33.0936 33.4219 32.6933 33.7031 32.2606 33.887C31.8279 34.071 31.3626 34.1575 30.8866 34.1575ZM24.4496 23.3173C24.3847 23.3173 24.1683 23.3173 23.8979 23.5878C23.6923 23.7825 23.5517 23.9881 23.4543 24.2153C23.3569 24.4425 23.3136 24.7021 23.3136 24.9617C23.3136 25.4161 23.4218 25.9029 23.6382 26.4222C23.8654 26.9632 24.2008 27.5366 24.6119 28.1099C25.0338 28.6833 25.5098 29.2567 26.0399 29.7868C26.57 30.3061 27.1326 30.7929 27.7168 31.2257C28.2794 31.6368 28.8528 31.9613 29.4261 32.2102C30.2484 32.5672 31.0056 32.6537 31.6223 32.3941C31.8386 32.3075 32.0334 32.1561 32.2281 31.9613C32.3255 31.8532 32.4012 31.745 32.4662 31.6043C32.4986 31.5286 32.5202 31.442 32.5202 31.3663C32.5202 31.3447 32.5202 31.3122 32.4877 31.2473L30.6811 29.9924C30.6053 29.9383 30.5296 29.895 30.4647 29.8733C30.4214 29.895 30.3565 29.9274 30.2375 30.0464L29.8264 30.4576C29.5127 30.7713 29.015 30.8578 28.6148 30.7172L28.42 30.6307C28.1712 30.5008 27.8899 30.3061 27.5761 30.0356C27.2732 29.776 26.9812 29.5055 26.6674 29.2026C26.3645 28.8889 26.094 28.5968 25.8344 28.2938C25.5531 27.9585 25.3584 27.688 25.2285 27.4608L25.1096 27.1795C25.0771 27.0713 25.0662 26.9523 25.0662 26.8442C25.0662 26.5412 25.1745 26.2708 25.38 26.0544L25.7911 25.6325C25.9101 25.5135 25.9534 25.4486 25.975 25.4053C25.9426 25.3296 25.8993 25.2647 25.8452 25.1889L24.5794 23.4039L24.4496 23.3173Z"
+          fill="white"
+        />
+      </svg>
+    </div>
+
+    <section
+      class="d-flex gap-0 flex-column px-2 py-4 w-100"
+      style="
+        max-width: 980px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+      "
+    >
+      <p class="text-headline">Armada</p>
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <p class="text-res">Astha Tour Indonesia</p>
+        <div class="d-flex gap-2">
+          <button
+            type="button"
+            class="linear d-flex justify-content-center align-items-center"
+            style="
+              width: 36px;
+              height: 36px;
+              padding: 0;
+              border: 0;
+              border-radius: 99px;
+            "
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 9C18 10.78 17.4722 12.5201 16.4832 14.0001C15.4943 15.4802 14.0887 16.6337 12.4442 17.3149C10.7996 17.9961 8.99002 18.1743 7.24419 17.8271C5.49836 17.4798 3.89472 16.6226 2.63604 15.364C1.37737 14.1053 0.520203 12.5016 0.172937 10.7558C-0.17433 9.00998 0.00390053 7.20038 0.685089 5.55585C1.36628 3.91131 2.51983 2.50571 3.99987 1.51677C5.47991 0.527841 7.21997 0 9 0C11.3869 0 13.6761 0.948211 15.364 2.63604C17.0518 4.32387 18 6.61305 18 9ZM14.1429 8.35714H6.33215L9.91929 4.75264L9 3.85714L3.85715 9L9 14.1429L9.91929 13.2255L6.33215 9.64285H14.1429V8.35714Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+            class="linear d-flex justify-content-center align-items-center"
+            style="
+              width: 36px;
+              height: 36px;
+              padding: 0;
+              border: 0;
+              border-radius: 99px;
+            "
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 9C0 10.78 0.527841 12.5201 1.51677 14.0001C2.50571 15.4802 3.91131 16.6337 5.55585 17.3149C7.20038 17.9961 9.00998 18.1743 10.7558 17.8271C12.5016 17.4798 14.1053 16.6226 15.364 15.364C16.6226 14.1053 17.4798 12.5016 17.8271 10.7558C18.1743 9.00998 17.9961 7.20038 17.3149 5.55585C16.6337 3.91131 15.4802 2.50571 14.0001 1.51677C12.5201 0.527841 10.78 0 9 0C6.61305 0 4.32387 0.948211 2.63604 2.63604C0.948211 4.32387 0 6.61305 0 9ZM3.85714 8.35714H11.6679L8.08071 4.75264L9 3.85714L14.1429 9L9 14.1429L8.08071 13.2255L11.6679 9.64285H3.85714V8.35714Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Multi-Item Carousel Wrapper -->
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner w-100 py-4">
+          <!-- Slide 1 with 4 cards -->
+          <div class="carousel-item active w-100">
+            <div class="d-flex gap-3 py-3 img-res w-100">
+              <!-- Card 1 -->
+              <div
+                class="d-flex flex-column align-items-center py-3 px-3 boxShadow"
+                style="
+                  width: 231px;
+                  min-width: 231px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img
+                  src="/assets/Car/Car.png"
+                  alt="Car"
+                  style="width: 186px; height: 145.8px"
+                />
+                <p style="font-size: 16px; font-weight: 950">Fortuner GR</p>
+              </div>
+              <!-- Card 2 -->
+              <div
+                class="d-flex flex-column align-items-center py-3 px-3 boxShadow"
+                style="
+                  width: 231px;
+                  min-width: 231px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img
+                  src="/assets/Car/Car2.png"
+                  alt="Car"
+                  style="width: 186px; height: 145.8px"
+                />
+                <p style="font-size: 16px; font-weight: 950">Alphard</p>
+              </div>
+              <!-- Card 3 -->
+              <div
+                class="d-flex flex-column align-items-center py-3 px-3 boxShadow"
+                style="
+                  width: 231px;
+                  min-width: 231px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img
+                  src="/assets/Car/Car3.png"
+                  alt="Car"
+                  style="width: 186px; height: 145.8px"
+                />
+                <p style="font-size: 16px; font-weight: 950">Innova Reborn</p>
+              </div>
+              <!-- Card 4 -->
+              <div
+                class="d-flex flex-column align-items-center py-3 px-3 boxShadow"
+                style="
+                  width: 231px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img
+                  src="/assets/Car/Car4.png"
+                  alt="Car"
+                  style="width: 186px; height: 145.8px"
+                />
+                <p style="font-size: 16px; font-weight: 950">Hiace</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 with another 4 cards -->
+          <div class="carousel-item">
+            <div class="d-flex gap-3 py-3 img-res w-100">
+              <div
+                class="d-flex flex-column align-items-center py-3 px-3 boxShadow"
+                style="
+                  width: 231px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img
+                  src="/assets/Car/Car2.png"
+                  alt="Car"
+                  style="width: 186px; height: 145.8px"
+                />
+                <p style="font-size: 16px; font-weight: 950">Alphard</p>
+              </div>
+              <!-- Card 2 -->
+              <div
+                class="d-flex flex-column align-items-center py-3 px-3 boxShadow"
+                style="
+                  width: 231px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img
+                  src="/assets/Car/Car.png"
+                  alt="Car"
+                  style="width: 186px; height: 145.8px"
+                />
+                <p style="font-size: 16px; font-weight: 950">Fortuner GR</p>
+              </div>
+              <!-- Card 3 -->
+              <div
+                class="d-flex flex-column align-items-center py-3 px-3 boxShadow"
+                style="
+                  width: 231px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img
+                  src="/assets/Car/Car4.png"
+                  alt="Car"
+                  style="width: 186px; height: 145.8px"
+                />
+                <p style="font-size: 16px; font-weight: 950">Hiace</p>
+              </div>
+              <!-- Card 4 -->
+              <div
+                class="d-flex flex-column align-items-center py-3 px-3 boxShadow"
+                style="
+                  width: 231px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img
+                  src="/assets/Car/Car3.png"
+                  alt="Car"
+                  style="width: 186px; height: 145.8px"
+                />
+                <p style="font-size: 16px; font-weight: 950">Innova Reborn</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="d-flex gap-0 flex-column px-2 py-4 w-100"
+      style="max-width: 980px; margin-left: auto; margin-right: auto"
+    >
+      <div class="form-wisata-wrap">
+        <div class="form-wisata">
+          <p class="text-col">
+            Dapatkan Penawaran Harga Terbaik Untuk Penyewaan Armada Sesuai
+            Kebutuhan Anda
+          </p>
+
+          <div class="py-4 form-col">
+            <div class="d-flex gap-3">
+              <div class="mb-2 w-100">
+                <label
+                  for="exampleFormControlInput1"
+                  style="font-weight: 900"
+                  class="form-label text-white"
+                  >Name*</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="Yusuf Iqbal"
+                  s
+                />
+              </div>
+              <div class="mb-2 w-100">
+                <label
+                  for="exampleFormControlInput1"
+                  style="font-weight: 900"
+                  class="form-label text-white"
+                  >No. Whatsapp*</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="0822934409"
+                />
+              </div>
+            </div>
+
+            <div class="d-flex gap-3">
+              <div class="mb-2 w-100">
+                <label
+                  for="exampleFormControlInput1"
+                  style="font-weight: 900"
+                  class="form-label text-white"
+                  >Armada*</label
+                >
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  style="padding: 0.575rem 2.25rem 0.675rem 0.75rem"
+                >
+                  <option value="1">Alphard</option>
+                  <option value="2">Innova</option>
+                  <option value="3">Hiace</option>
+                </select>
+              </div>
+              <div class="mb-2 w-100">
+                <label
+                  for="exampleFormControlInput1"
+                  style="font-weight: 900"
+                  class="form-label text-white"
+                  >Jumlah*</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="2"
+                />
+              </div>
+            </div>
+
+            <div class="col-on-md gap-3">
+              <div class="mb-2 w-100">
+                <label
+                  for="exampleFormControlInput1"
+                  style="font-weight: 900"
+                  class="form-label text-white"
+                  >Tanggal Sewa*</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="Tanggal Sewa"
+                />
+              </div>
+              <div class="mb-2 w-100">
+                <label
+                  for="exampleFormControlInput1"
+                  style="font-weight: 900"
+                  class="form-label text-white"
+                  >Tanggal Akhir*</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="Tanggal Sewa"
+                />
+              </div>
+            </div>
+
+            <div class="w-100 mt-3">
+              <button
+                type="button"
+                class="btn w-100 text-white"
+                style="
+                  background-color: #40a93d;
+                  border-radius: 99px;
+                  padding: 8px 0px 8px 0px;
+                  font-size: 16px;
+                  font-weight: 800;
+                "
+              >
+                Download Brief
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="linearToLeft"></div>
+
+        <div class="form-image">
+          <img src="/assets/Place.png" alt="Place" width="100%" height="100%" />
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="d-flex gap-0 flex-column px-2 py-4"
+      style="max-width: 980px; margin-left: auto; margin-right: auto"
+    >
+      <div
+        class="d-flex justify-content-center flex-column align-items-center pb-4 mt-3"
+      >
+        <p class="text-headline">Paket Wisata</p>
+        <p class="text-res">Astha Tour Indonesia</p>
+      </div>
+
+      <div
+        class="w-100 d-flex flex-row flex-wrap py-3 gap-3 justify-content-center"
+      >
+        <div
+          class="d-flex flex-column gap-3 align-items-center boxShadow"
+          style="
+            width: 306px;
+            height: 347px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="/assets/Wisata/Wisata.png"
+            width="306"
+            height="206"
+            alt="Wisata"
+          />
+          <p style="font-size: 16px; font-weight: 800">Bromo Tour Pack</p>
+
+          <div class="d-flex justify-content-center">
+            <button
+              type="button"
+              style="
+                --bs-btn-font-size: 16px;
+                --bs-btn-color: white;
+                --bs-btn-line-height: 1.2;
+                font-weight: 800;
+                --bs-btn-padding-y: 8px;
+              "
+              class="btn linear rounded-5 px-5 w-auto"
+            >
+              Cek Wisata
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="d-flex flex-column gap-3 align-items-center boxShadow"
+          style="
+            width: 306px;
+            height: 347px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="/assets/Wisata/Wisata2.png"
+            width="306"
+            height="206"
+            alt="Wisata"
+          />
+          <p style="font-size: 16px; font-weight: 800">Dieng Tour Pack</p>
+
+          <div class="d-flex justify-content-center">
+            <button
+              type="button"
+              style="
+                --bs-btn-font-size: 16px;
+                --bs-btn-color: white;
+                --bs-btn-line-height: 1.2;
+                font-weight: 800;
+                --bs-btn-padding-y: 8px;
+              "
+              class="btn linear rounded-5 px-5 w-auto"
+            >
+              Cek Wisata
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="d-flex flex-column gap-3 align-items-center boxShadow"
+          style="
+            width: 306px;
+            height: 347px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="/assets/Wisata/Wisata3.png"
+            width="306"
+            height="206"
+            alt="Wisata"
+          />
+          <p style="font-size: 16px; font-weight: 800">Yogyakarta Tour Pack</p>
+
+          <div class="d-flex justify-content-center">
+            <button
+              type="button"
+              style="
+                --bs-btn-font-size: 16px;
+                --bs-btn-color: white;
+                --bs-btn-line-height: 1.2;
+                font-weight: 800;
+                --bs-btn-padding-y: 8px;
+              "
+              class="btn linear rounded-5 px-5 w-auto"
+            >
+              Cek Wisata
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="d-flex flex-column gap-3 align-items-center boxShadow"
+          style="
+            width: 306px;
+            height: 347px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="/assets/Wisata/Wisata4.png"
+            width="306"
+            height="206"
+            alt="Wisata"
+          />
+          <p style="font-size: 16px; font-weight: 800">
+            Paket Wisata Avanza A 1 Day
+          </p>
+
+          <div class="d-flex justify-content-center">
+            <button
+              type="button"
+              style="
+                --bs-btn-font-size: 16px;
+                --bs-btn-color: white;
+                --bs-btn-line-height: 1.2;
+                font-weight: 800;
+                --bs-btn-padding-y: 8px;
+              "
+              class="btn linear rounded-5 px-5 w-auto"
+            >
+              Cek Wisata
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="d-flex flex-column gap-3 align-items-center boxShadow"
+          style="
+            width: 306px;
+            height: 347px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="/assets/Wisata/Wisata5.png"
+            width="306"
+            height="206"
+            alt="Wisata"
+          />
+          <p style="font-size: 16px; font-weight: 800">
+            Paket Wisata Avanza B 1 Day
+          </p>
+
+          <div class="d-flex justify-content-center">
+            <button
+              type="button"
+              style="
+                --bs-btn-font-size: 16px;
+                --bs-btn-color: white;
+                --bs-btn-line-height: 1.2;
+                font-weight: 800;
+                --bs-btn-padding-y: 8px;
+              "
+              class="btn linear rounded-5 px-5 w-auto"
+            >
+              Cek Wisata
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="d-flex flex-column gap-3 align-items-center boxShadow"
+          style="
+            width: 306px;
+            height: 347px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="/assets/Wisata/Wisata6.png"
+            width="306"
+            height="206"
+            alt="Wisata"
+          />
+          <p style="font-size: 16px; font-weight: 800">
+            Paket Wisata Avanza C 1 Day
+          </p>
+
+          <div class="d-flex justify-content-center">
+            <button
+              type="button"
+              style="
+                --bs-btn-font-size: 16px;
+                --bs-btn-color: white;
+                --bs-btn-line-height: 1.2;
+                font-weight: 800;
+                --bs-btn-padding-y: 8px;
+              "
+              class="btn linear rounded-5 px-5 w-auto"
+            >
+              Cek Wisata
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="d-flex justify-content-center align-items-center w-100 py-4"
+        >
+          <button
+            type="button"
+            style="
+              --bs-btn-font-size: 16px;
+              --bs-btn-color: white;
+              --bs-btn-line-height: 1.2;
+              font-weight: 800;
+              --bs-btn-padding-y: 8px;
+            "
+            class="btn linear rounded-5 px-5 w-auto"
+          >
+            Lihat Selengkapnya
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="d-flex flex-column px-2 py-4 w-100"
+      style="max-width: 980px; margin-left: auto; margin-right: auto"
+    >
+      <p class="text-headline">Portfolio</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <p class="text-res">Astha Tour Indonesia</p>
+        <div class="d-flex gap-2">
+          <button
+            class="linear d-flex justify-content-center align-items-center"
+            style="
+              width: 36px;
+              height: 36px;
+              padding: 0;
+              border: 0;
+              border-radius: 99px;
+            "
+            data-bs-target="#portfolioCarousel"
+            data-bs-slide="prev"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 9C18 10.78 17.4722 12.5201 16.4832 14.0001C15.4943 15.4802 14.0887 16.6337 12.4442 17.3149C10.7996 17.9961 8.99002 18.1743 7.24419 17.8271C5.49836 17.4798 3.89472 16.6226 2.63604 15.364C1.37737 14.1053 0.520203 12.5016 0.172937 10.7558C-0.17433 9.00998 0.00390053 7.20038 0.685089 5.55585C1.36628 3.91131 2.51983 2.50571 3.99987 1.51677C5.47991 0.527841 7.21997 0 9 0C11.3869 0 13.6761 0.948211 15.364 2.63604C17.0518 4.32387 18 6.61305 18 9ZM14.1429 8.35714H6.33215L9.91929 4.75264L9 3.85714L3.85715 9L9 14.1429L9.91929 13.2255L6.33215 9.64285H14.1429V8.35714Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+
+          <button
+            class="linear d-flex justify-content-center align-items-center"
+            style="
+              width: 36px;
+              height: 36px;
+              padding: 0;
+              border: 0;
+              border-radius: 99px;
+            "
+            data-bs-target="#portfolioCarousel"
+            data-bs-slide="next"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 9C0 10.78 0.527841 12.5201 1.51677 14.0001C2.50571 15.4802 3.91131 16.6337 5.55585 17.3149C7.20038 17.9961 9.00998 18.1743 10.7558 17.8271C12.5016 17.4798 14.1053 16.6226 15.364 15.364C16.6226 14.1053 17.4798 12.5016 17.8271 10.7558C18.1743 9.00998 17.9961 7.20038 17.3149 5.55585C16.6337 3.91131 15.4802 2.50571 14.0001 1.51677C12.5201 0.527841 10.78 0 9 0C6.61305 0 4.32387 0.948211 2.63604 2.63604C0.948211 4.32387 0 6.61305 0 9ZM3.85714 8.35714H11.6679L8.08071 4.75264L9 3.85714L14.1429 9L9 14.1429L8.08071 13.2255L11.6679 9.64285H3.85714V8.35714Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="portfolioCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="w-100 py-4 d-flex gap-3 img-res">
+              <div
+                class="d-flex gap-2 flex-column align-items-center"
+                style="
+                  width: 306px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img src="/assets/Portfolio/Portofolio.png" alt="Portfolio 1" />
+              </div>
+              <div
+                class="d-flex gap-2 flex-column align-items-center"
+                style="
+                  width: 306px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img
+                  src="/assets/Portfolio/Portofolio2.png"
+                  alt="Portfolio 2"
+                />
+              </div>
+              <div
+                class="d-flex gap-2 flex-column align-items-center"
+                style="
+                  width: 306px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img
+                  src="/assets/Portfolio/Portofolio3.png"
+                  alt="Portfolio 3"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="w-100 py-4 d-flex gap-3 img-res">
+              <div
+                class="d-flex gap-2 flex-column align-items-center"
+                style="
+                  width: 306px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img
+                  src="/assets/Portfolio/Portofolio2.png"
+                  alt="Portfolio 4"
+                />
+              </div>
+              <div
+                class="d-flex gap-2 flex-column align-items-center"
+                style="
+                  width: 306px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img
+                  src="/assets/Portfolio/Portofolio3.png"
+                  alt="Portfolio 5"
+                />
+              </div>
+              <div
+                class="d-flex gap-2 flex-column align-items-center"
+                style="
+                  width: 306px;
+                  height: 221px;
+                  border-radius: 15px;
+                  background-color: white;
+                "
+              >
+                <img src="/assets/Portfolio/Portofolio.png" alt="Portfolio 6" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-5 py-5 footer">
+      <p
+        class="text-white text-center"
+        style="font-size: 30px; font-weight: 800"
+      >
+        Follow Us On Social Media
+      </p>
+
+      <div class="social">
+        <div class="d-flex flex-column gap-2 align-items-center">
+          <svg
+            width="59"
+            height="59"
+            viewBox="0 0 59 59"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="29.5" cy="29.5" r="29.5" fill="white" />
+            <g clip-path="url(#clip0_1_1228)">
+              <path
+                d="M28.7857 23.7551C25.1085 23.7551 22.1424 26.6388 22.1424 30.2138C22.1424 33.7889 25.1085 36.6726 28.7857 36.6726C32.4629 36.6726 35.429 33.7889 35.429 30.2138C35.429 26.6388 32.4629 23.7551 28.7857 23.7551ZM28.7857 34.4129C26.4094 34.4129 24.4667 32.5298 24.4667 30.2138C24.4667 27.8979 26.4036 26.0148 28.7857 26.0148C31.1678 26.0148 33.1047 27.8979 33.1047 30.2138C33.1047 32.5298 31.162 34.4129 28.7857 34.4129ZM37.2502 23.4909C37.2502 24.3285 36.5564 24.9974 35.7007 24.9974C34.8392 24.9974 34.1512 24.3228 34.1512 23.4909C34.1512 22.659 34.845 21.9844 35.7007 21.9844C36.5564 21.9844 37.2502 22.659 37.2502 23.4909ZM41.6502 25.0199C41.5519 23.0019 41.0778 21.2143 39.5572 19.7416C38.0423 18.2688 36.2037 17.8079 34.1281 17.7067C31.9888 17.5887 25.5768 17.5887 23.4375 17.7067C21.3676 17.8023 19.529 18.2632 18.0084 19.7359C16.4878 21.2087 16.0195 22.9962 15.9154 25.0142C15.794 27.0941 15.794 33.328 15.9154 35.4078C16.0137 37.4258 16.4878 39.2134 18.0084 40.6861C19.529 42.1589 21.3619 42.6198 23.4375 42.721C25.5768 42.839 31.9888 42.839 34.1281 42.721C36.2037 42.6254 38.0423 42.1645 39.5572 40.6861C41.072 39.2134 41.5461 37.4258 41.6502 35.4078C41.7716 33.328 41.7716 27.0997 41.6502 25.0199ZM38.8865 37.6394C38.4355 38.7412 37.5624 39.59 36.4234 40.0341C34.7178 40.6917 30.6705 40.54 28.7857 40.54C26.9008 40.54 22.8478 40.6861 21.1479 40.0341C20.0147 39.5956 19.1416 38.7468 18.6849 37.6394C18.0084 35.9812 18.1645 32.0464 18.1645 30.2138C18.1645 28.3813 18.0142 24.4409 18.6849 22.7883C19.1359 21.6865 20.0089 20.8377 21.1479 20.3936C22.8536 19.7359 26.9008 19.8877 28.7857 19.8877C30.6705 19.8877 34.7236 19.7416 36.4234 20.3936C37.5567 20.8321 38.4297 21.6809 38.8865 22.7883C39.5629 24.4465 39.4068 28.3813 39.4068 30.2138C39.4068 32.0464 39.5629 35.9868 38.8865 37.6394Z"
+                fill="#168DC7"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_1_1228">
+                <rect
+                  width="25.9024"
+                  height="28.7805"
+                  fill="white"
+                  transform="translate(15.8291 15.8293)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+
+          <p style="font-size: 16px; font-weight: 800; color: white">
+            asthatourindonesia
+          </p>
+        </div>
+
+        <div class="d-flex flex-column gap-2 align-items-center">
+          <svg
+            width="59"
+            height="59"
+            viewBox="0 0 59 59"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="29.5" cy="29.5" r="29.5" fill="white" />
+            <path
+              d="M32.9474 44H25.3684V31.9857H23.7684C22.7916 31.9857 22 31.2069 22 30.2457V27.0971C22 26.136 22.7916 25.3571 23.7684 25.3571H25.3684V21.2143C25.3684 17.784 28.1979 15 31.6842 15H36.2316C37.2084 15 38 15.7788 38 16.74V20.7172C38 21.6783 37.2084 22.4571 36.2316 22.4571H32.9474V25.3571H36.1137C36.6526 25.3571 37.1411 25.5892 37.4779 25.9869C37.8147 26.3846 37.9495 26.9149 37.8484 27.4286L37.2084 30.5771C37.04 31.3891 36.3158 31.9691 35.4737 31.9691H32.9474V44ZM27.8947 41.5143H30.4211V29.5H34.8674L35.2042 27.8429H30.4379V21.7114C30.4379 20.7503 31.2295 19.9714 32.2063 19.9714H35.4905V17.4857H31.6842C29.5958 17.4857 27.8947 19.1594 27.8947 21.2143V27.8429H24.5263V29.5H27.8947V41.5143Z"
+              fill="#168DC7"
+            />
+          </svg>
+
+          <p style="font-size: 16px; font-weight: 800; color: white">
+            astha trans
+          </p>
+        </div>
+
+        <div class="d-flex flex-column gap-2 align-items-center">
+          <svg
+            width="60"
+            height="59"
+            viewBox="0 0 60 59"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="30.3779" cy="29.5" r="29.5" fill="white" />
+            <path
+              d="M44.0487 27.6318C41.361 27.6377 38.7393 26.8657 36.5538 25.4249V35.4736C36.5531 37.3348 35.9355 39.1513 34.7835 40.6804C33.6315 42.2095 32.0002 43.3783 30.1076 44.0304C28.2149 44.6825 26.1512 44.7869 24.1925 44.3297C22.2337 43.8724 20.4731 42.8753 19.1462 41.4716C17.8194 40.0679 16.9894 38.3246 16.7673 36.4747C16.5453 34.6248 16.9417 32.7566 17.9035 31.1198C18.8654 29.4831 20.3469 28.1558 22.1499 27.3154C23.9529 26.4751 25.9915 26.1617 27.9931 26.4173V31.4715C27.0772 31.2061 26.0936 31.2141 25.1829 31.4943C24.2722 31.7745 23.4809 32.3126 22.9221 33.0317C22.3632 33.7508 22.0653 34.6141 22.071 35.4984C22.0766 36.3828 22.3855 37.2428 22.9535 37.9558C23.5216 38.6688 24.3197 39.1982 25.2339 39.4685C26.1482 39.7388 27.1317 39.7362 28.0442 39.4609C28.9567 39.1856 29.7514 38.6518 30.3148 37.9358C30.8783 37.2197 31.1817 36.358 31.1816 35.4736V15.8293H36.5538C36.5501 16.2472 36.5881 16.6645 36.6674 17.0759C36.8541 17.9943 37.2422 18.868 37.8081 19.6436C38.374 20.4191 39.1057 21.0802 39.9585 21.5863C41.1717 22.3252 42.5942 22.719 44.0487 22.7187V27.6318Z"
+              fill="#168DC7"
+            />
+          </svg>
+
+          <p style="font-size: 16px; font-weight: 800; color: white">
+            asthatourindonesia
+          </p>
+        </div>
+      </div>
+      <div class="border w-100"></div>
+
+      <p
+        class="text-white mt-3 text-center"
+        style="font-size: 16px; font-weight: 800"
+      >
+        Jl. Wonocatur No.449, Wonocatur, Kec. Banguntapan, Kabupaten Bantul,
+        Daerah Istimewa Yogyakarta 55198
+      </p>
+    </footer>
+  </body>
+
+  <script src="/main.js"></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+</html>
